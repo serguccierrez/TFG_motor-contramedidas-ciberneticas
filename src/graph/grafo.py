@@ -3,13 +3,24 @@ Este script recoge los datos de la DB creada en create_db.py y los usa para repr
 """
 from pathlib import Path
 import sqlite3
+import json
 import networkx as nx
 
 #===============================================[CONSTANTS]===============================================
-# Dominios militares MDO
-DOMINIOS = ["Terrestre", "Marítimo", "Aéreo", "Espacial", "Ciberespacio"]
-DEPENDENCIES_TYPES = ["data_flow", "comm_link", "identity_authz", "compute_platform", "security_enforcement", "management_control", "physical_env"]
-ASSET_TYPES = ["identity_trust", "compute_runtime", "application_logic", "data", "network_comms", "security_enforcement", "management_plane", "physical_platform"]
+def load_constants() -> dict:
+    """
+    Carga las constantes desde el archivo JSON de configuración.
+    """
+    config_path = Path(__file__).parent.parent.parent / "Configs" / "constants.json"
+    with open(config_path, 'r', encoding='utf-8') as f:
+        config = json.load(f)
+    return config
+
+# Cargar configuración
+_config = load_constants()
+DOMINIOS = _config["dominios"]
+DEPENDENCIES_TYPES = _config["dependencies_types"]
+ASSET_TYPES = _config["asset_types"]
 
 
 #===============================================[DATABASE_FUNCTIONS]===============================================

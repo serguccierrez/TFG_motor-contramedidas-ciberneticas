@@ -1,0 +1,28 @@
+{
+  "dominios": [
+    "Terrestre",
+    "Marítimo",
+    "Aéreo",
+    "Espacial",
+    "Ciberespacio"
+  ],
+  "dependencies_types": [
+    "data_flow",
+    "comm_link",
+    "identity_authz",
+    "compute_platform",
+    "security_enforcement",
+    "management_control",
+    "physical_env"
+  ],
+  "asset_types": [
+    "identity_trust",
+    "compute_runtime",
+    "application_logic",
+    "data",
+    "network_comms",
+    "security_enforcement",
+    "management_plane",
+    "physical_platform"
+  ]
+}
