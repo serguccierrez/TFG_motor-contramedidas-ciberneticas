@@ -1,0 +1,128 @@
+{
+  "reconnaissance": {
+    "data_flow": 0.60,
+    "comm_link": 0.70,
+    "identity_authz": 0.50,
+    "compute_platform": 0.40,
+    "security_enforcement": 0.40,
+    "management_control": 0.40,
+    "physical_env": 0.10
+  },
+  "resource_development": {
+    "data_flow": 0.10,
+    "comm_link": 0.10,
+    "identity_authz": 0.10,
+    "compute_platform": 0.10,
+    "security_enforcement": 0.10,
+    "management_control": 0.10,
+    "physical_env": 0.10
+  },
+  "initial_access": {
+    "data_flow": 0.40,
+    "comm_link": 0.50,
+    "identity_authz": 0.50,
+    "compute_platform": 0.40,
+    "security_enforcement": 0.50,
+    "management_control": 0.40,
+    "physical_env": 0.10
+  },
+  "execution": {
+    "data_flow": 0.30,
+    "comm_link": 0.30,
+    "identity_authz": 0.20,
+    "compute_platform": 0.70,
+    "security_enforcement": 0.20,
+    "management_control": 0.50,
+    "physical_env": 0.10
+  },
+  "persistence": {
+    "data_flow": 0.30,
+    "comm_link": 0.30,
+    "identity_authz": 0.40,
+    "compute_platform": 0.70,
+    "security_enforcement": 0.20,
+    "management_control": 0.60,
+    "physical_env": 0.10
+  },
+  "privilege_escalation": {
+    "data_flow": 0.30,
+    "comm_link": 0.20,
+    "identity_authz": 0.70,
+    "compute_platform": 0.60,
+    "security_enforcement": 0.20,
+    "management_control": 0.70,
+    "physical_env": 0.10
+  },
+  "defense_evasion": {
+    "data_flow": 0.20,
+    "comm_link": 0.30,
+    "identity_authz": 0.40,
+    "compute_platform": 0.40,
+    "security_enforcement": 0.70,
+    "management_control": 0.60,
+    "physical_env": 0.10
+  },
+  "credential_access": {
+    "data_flow": 0.40,
+    "comm_link": 0.20,
+    "identity_authz": 0.90,
+    "compute_platform": 0.30,
+    "security_enforcement": 0.20,
+    "management_control": 0.60,
+    "physical_env": 0.10
+  },
+  "discovery": {
+    "data_flow": 0.50,
+    "comm_link": 0.60,
+    "identity_authz": 0.40,
+    "compute_platform": 0.40,
+    "security_enforcement": 0.30,
+    "management_control": 0.40,
+    "physical_env": 0.10
+  },
+  "lateral_movement": {
+    "data_flow": 0.40,
+    "comm_link": 0.70,
+    "identity_authz": 0.60,
+    "compute_platform": 0.50,
+    "security_enforcement": 0.40,
+    "management_control": 0.60,
+    "physical_env": 0.10
+  },
+  "collection": {
+    "data_flow": 0.80,
+    "comm_link": 0.30,
+    "identity_authz": 0.20,
+    "compute_platform": 0.30,
+    "security_enforcement": 0.20,
+    "management_control": 0.20,
+    "physical_env": 0.10
+  },
+  "command_and_control": {
+    "data_flow": 0.30,
+    "comm_link": 0.90,
+    "identity_authz": 0.20,
+    "compute_platform": 0.40,
+    "security_enforcement": 0.40,
+    "management_control": 0.30,
+    "physical_env": 0.10
+  },
+  "exfiltration": {
+    "data_flow": 0.90,
+    "comm_link": 0.80,
+    "identity_authz": 0.30,
+    "compute_platform": 0.30,
+    "security_enforcement": 0.40,
+    "management_control": 0.20,
+    "physical_env": 0.10
+  },
+  "impact": {
+    "data_flow": 0.30,
+    "comm_link": 0.60,
+    "identity_authz": 0.20,
+    "compute_platform": 0.60,
+    "security_enforcement": 0.30,
+    "management_control": 0.40,
+    "physical_env": 0.90
+  }
+}

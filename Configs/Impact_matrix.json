@@ -1,0 +1,142 @@
+{
+  "reconnaissance": {
+    "identity_trust": 0.3,
+    "compute_runtime": 0.3,
+    "application_logic": 0.5,
+    "data": 0.6,
+    "network_comms": 0.5,
+    "security_enforcement": 0.4,
+    "management_plane": 0.4,
+    "physical_platform": 0.5
+  },
+  "resource_development": {
+    "identity_trust": 0.1,
+    "compute_runtime": 0.1,
+    "application_logic": 0.1,
+    "data": 0.1,
+    "network_comms": 0.1,
+    "security_enforcement": 0.1,
+    "management_plane": 0.1,
+    "physical_platform": 0.1
+  },
+  "initial_access": {
+    "identity_trust": 0.4,
+    "compute_runtime": 0.7,
+    "application_logic": 0.8,
+    "data": 0.6,
+    "network_comms": 0.4,
+    "security_enforcement": 0.5,
+    "management_plane": 0.5,
+    "physical_platform": 0.5
+  },
+  "execution": {
+    "identity_trust": 0.2,
+    "compute_runtime": 0.9,
+    "application_logic": 0.7,
+    "data": 0.4,
+    "network_comms": 0.3,
+    "security_enforcement": 0.3,
+    "management_plane": 0.6,
+    "physical_platform": 0.7
+  },
+  "persistence": {
+    "identity_trust": 0.5,
+    "compute_runtime": 0.8,
+    "application_logic": 0.6,
+    "data": 0.4,
+    "network_comms": 0.3,
+    "security_enforcement": 0.4,
+    "management_plane": 0.7,
+    "physical_platform": 0.7
+  },
+  "privilege_escalation": {
+    "identity_trust": 0.8,
+    "compute_runtime": 0.8,
+    "application_logic": 0.6,
+    "data": 0.4,
+    "network_comms": 0.3,
+    "security_enforcement": 0.4,
+    "management_plane": 0.8,
+    "physical_platform": 0.6
+  },
+  "defense_evasion": {
+    "identity_trust": 0.5,
+    "compute_runtime": 0.7,
+    "application_logic": 0.5,
+    "data": 0.3,
+    "network_comms": 0.4,
+    "security_enforcement": 0.6,
+    "management_plane": 0.7,
+    "physical_platform": 0.5
+  },
+  "credential_access": {
+    "identity_trust": 1.0,
+    "compute_runtime": 0.5,
+    "application_logic": 0.5,
+    "data": 0.4,
+    "network_comms": 0.3,
+    "security_enforcement": 0.4,
+    "management_plane": 0.6,
+    "physical_platform": 0.4
+  },
+  "discovery": {
+    "identity_trust": 0.5,
+    "compute_runtime": 0.5,
+    "application_logic": 0.5,
+    "data": 0.5,
+    "network_comms": 0.6,
+    "security_enforcement": 0.4,
+    "management_plane": 0.5,
+    "physical_platform": 0.4
+  },
+  "lateral_movement": {
+    "identity_trust": 0.6,
+    "compute_runtime": 0.7,
+    "application_logic": 0.6,
+    "data": 0.4,
+    "network_comms": 0.6,
+    "security_enforcement": 0.5,
+    "management_plane": 0.7,
+    "physical_platform": 0.5
+  },
+  "collection": {
+    "identity_trust": 0.3,
+    "compute_runtime": 0.4,
+    "application_logic": 0.6,
+    "data": 0.9,
+    "network_comms": 0.3,
+    "security_enforcement": 0.3,
+    "management_plane": 0.3,
+    "physical_platform": 0.4
+  },
+  "command_and_control": {
+    "identity_trust": 0.3,
+    "compute_runtime": 0.6,
+    "application_logic": 0.6,
+    "data": 0.4,
+    "network_comms": 0.8,
+    "security_enforcement": 0.4,
+    "management_plane": 0.4,
+    "physical_platform": 0.5
+  },
+  "exfiltration": {
+    "identity_trust": 0.5,
+    "compute_runtime": 0.5,
+    "application_logic": 0.7,
+    "data": 1.0,
+    "network_comms": 0.6,
+    "security_enforcement": 0.4,
+    "management_plane": 0.4,
+    "physical_platform": 0.4
+  },
+  "impact": {
+    "identity_trust": 0.3,
+    "compute_runtime": 0.8,
+    "application_logic": 0.9,
+    "data": 0.7,
+    "network_comms": 0.7,
+    "security_enforcement": 0.6,
+    "management_plane": 0.7,
+    "physical_platform": 1.0
+  }
+}
