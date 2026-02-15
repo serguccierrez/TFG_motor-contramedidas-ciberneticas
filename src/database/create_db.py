@@ -69,11 +69,14 @@ def create_db(db_path: Path, recreate: bool) -> None:
     - db_path: ruta del fichero .db
     - recreate: si True, borra el fichero si existe y lo crea desde cero
     """
+    # Crea el directorio si no existe
+    db_path.parent.mkdir(parents=True, exist_ok=True)
+    
     if recreate and db_path.exists():
         db_path.unlink()
 
     # Se intenta conectar con la base de datos (si no existe, SQLite crea el fichero automáticamente)
-    con = sqlite3.connect(db_path)
+    con = sqlite3.connect(str(db_path))
     try:
         # En SQLite, las FKs se activan por conexión
         con.execute("PRAGMA foreign_keys = ON;")

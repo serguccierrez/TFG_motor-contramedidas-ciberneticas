@@ -10,7 +10,7 @@ import random
 
 #=============================[CONSTANTS]===========================================#
 MITRE_ATTACK_JSON_PATH = Path(__file__).parent.parent.parent / "data" / "enterprise-attack.json"
-MITRE_ATTACK_DATA = MitreAttackData(stix_filepath=MITRE_ATTACK_JSON_PATH)
+MITRE_ATTACK_DATA = MitreAttackData(stix_filepath=str(MITRE_ATTACK_JSON_PATH))
 
 
 #===========================================[MITRE FUNCTIONS]===========================================#
