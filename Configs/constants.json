@@ -24,5 +24,11 @@
     "security_enforcement",
     "management_plane",
     "physical_platform"
-  ]
+  ],
+
+  "impact_levels": {
+    "low": 1,
+    "medium": 5,
+    "high": 10
+  }
 }
