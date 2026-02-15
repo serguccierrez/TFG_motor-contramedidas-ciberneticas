@@ -2,16 +2,20 @@
 import random
 import networkx as nx
 from pathlib import Path
-from tabulate import tabulate
 
 import src.database.load_data as load_data
 import src.cyberrecom.mitre as mitre
 import src.graph.grafo as grafo
 import src.database.create_db as create_db
 
+
+
+import src.risk.red_bayes as red_bayes
+import src.risk.id_test as id_test
+
 #=============================[CONSTANTS]===========================================#
-DB_PATH = Path(__file__).parent.parent.parent / "tfg_catalog_v1.0.0.db"
-EXCEL_PATH = Path(__file__).parent.parent.parent / "asset_catalog_validado_v1.0.0_ajustado.xlsx"
+DB_PATH = Path(__file__).parent.parent / "database" / "tfg_catalog_v1.0.0.db"
+EXCEL_PATH = Path(__file__).parent.parent.parent / "data" / "asset_catalog_validado_v1.0.0_ajustado.xlsx"
 
 #==============================[MAIN FUNCTION]===========================================#
 
@@ -46,7 +50,7 @@ def main() -> None:
     print("="*80)
     
     
-   # load_data.load_and_insert_data(EXCEL_PATH, DB_PATH)
+    load_data.load_and_insert_data(EXCEL_PATH, DB_PATH)
     
     
     # ============ PASO 3: Construir grafo MDO ============
@@ -68,8 +72,8 @@ def main() -> None:
     
     print(f"\nSimulación de amenaza: TTP={random_threat_vector['ttp_id']}, Confidence={random_threat_vector['confidence']:.2f}, Asset={random_threat_vector['asset']}")
   
-    #test
-        # ============ PASO 5: Analizar impacto en el grafo MDO ============
+    
+    # ============ PASO 5: Analizar impacto en el grafo MDO ============
     print("\n" + "="*80)
     print("PASO TEST: ANALIZAR IMPACTO EN EL GRAFO MDO")
     print("="*80)
@@ -79,6 +83,29 @@ def main() -> None:
     for level, nodes in affected_nodes.items():
         print(f"Nivel {level}: {nodes}")
     
+    
+    # ============ PASO 6: Construcción de la red de bayes para el activo atacado ============
+    red_bayes_model = red_bayes.bayesian_network_construction()
+    
+    # Pregunta: ¿Cuál es C_res si aplico firewall?
+    qC = red_bayes_model.query(variables=["C_res"], evidence={"CM": "firewall"})
+    print("\nP(C_res | CM=firewall):")
+    print(qC)
+
+    # Pregunta: ¿Cuál es I_res si aplico firewall?
+    qI = red_bayes_model.query(variables=["I_res"], evidence={"CM": "firewall"})
+    print("\nP(I_res | CM=firewall):")
+    print(qI)
+
+    # Pregunta: ¿Cuál es A_res si aplico firewall?
+    qA = red_bayes_model.query(variables=["A_res"], evidence={"CM": "firewall"})
+    print("\nP(A_res | CM=firewall):")
+    print(qA)
+    
+    # ================ PASO 7: Construcción y resolución de diagramas de influencia para cada dimensión CIA ===============
+    ie_C, decision_C = id_test.create_and_solve_dimension("C", "C_res", "CONFIDENTIALITY")
+    ie_I, decision_I = id_test.create_and_solve_dimension("I", "I_res", "INTEGRITY")
+    ie_A, decision_A = id_test.create_and_solve_dimension("A", "A_res", "AVAILABILITY")
     
     
     
